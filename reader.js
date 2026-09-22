@@ -4,6 +4,7 @@
   const toc = document.getElementById("toc");
   const tocToggle = document.getElementById("toc-toggle");
   const randomBtn = document.getElementById("random-entry");
+  const modeToggle = document.getElementById("mode-toggle");
 
   function slug(text) {
     return text
@@ -32,12 +33,27 @@
     return items;
   }
 
+  function closeToc() {
+    toc.setAttribute("hidden", "");
+    tocToggle.setAttribute("aria-expanded", "false");
+  }
+
   function renderToc(items) {
     tocList.innerHTML = items
       .map(function (item) {
         return '<a href="#' + item.id + '">' + item.title + "</a>";
       })
       .join("");
+    tocList.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeToc);
+    });
+  }
+
+  function syncModeButton() {
+    if (!modeToggle) return;
+    const night = document.documentElement.getAttribute("data-mode") === "night";
+    modeToggle.setAttribute("aria-pressed", String(night));
+    modeToggle.textContent = night ? "[day]" : "[night]";
   }
 
   tocToggle.addEventListener("click", function () {
@@ -54,7 +70,27 @@
     if (!entries.length) return;
     const target = entries[Math.floor(Math.random() * entries.length)];
     target.scrollIntoView({ behavior: "smooth", block: "start" });
+    closeToc();
   });
+
+  if (modeToggle) {
+    syncModeButton();
+    modeToggle.addEventListener("click", function () {
+      const night = document.documentElement.getAttribute("data-mode") === "night";
+      if (night) {
+        document.documentElement.removeAttribute("data-mode");
+        try {
+          localStorage.setItem("tur-book-mode", "day");
+        } catch (e) {}
+      } else {
+        document.documentElement.setAttribute("data-mode", "night");
+        try {
+          localStorage.setItem("tur-book-mode", "night");
+        } catch (e) {}
+      }
+      syncModeButton();
+    });
+  }
 
   fetch("THE-SHADOW-PHASE.md")
     .then(function (response) {
