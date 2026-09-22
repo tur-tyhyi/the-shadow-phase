@@ -2,81 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>THE SHADOW PHASE — Tur Tyhyi</title>
   <meta name="description" content="THE SHADOW PHASE. A book by Tur Tyhyi.">
   <meta property="og:title" content="THE SHADOW PHASE">
   <meta property="og:description" content="Every civilization is born twice. A book by Tur Tyhyi.">
   <meta property="og:type" content="book">
-  <link rel="canonical" href="https://tur-tyhyi.github.io/the-shadow-phase/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    (function () {
-      try {
-        var hour = new Date().getHours();
-        var stored = localStorage.getItem("tur-book-mode");
-        if (stored === "night" || stored === "day") {
-          if (stored === "night") document.documentElement.setAttribute("data-mode", "night");
-        } else if (hour >= 19 || hour < 7) {
-          document.documentElement.setAttribute("data-mode", "night");
-        }
-      } catch (e) {}
-    })();
-  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="prompt" href="https://turtyhyi.com/">tur_tyhyi@root:~$</a>
-    <nav class="tools" aria-label="Controls">
-      <a class="tool-link" href="https://turtyhyi.com/#books">[home]</a>
-      <button type="button" class="tool-btn" id="toc-toggle" aria-expanded="false" aria-controls="toc">
-        [toc]
-      </button>
-      <button type="button" class="tool-btn" id="random-entry">
-        [any]
-      </button>
-      <button type="button" class="tool-btn" id="mode-toggle" aria-pressed="false" title="Day / night">
-        [mode]
-      </button>
-    </nav>
+  <div class="field" aria-hidden="true"></div>
+
+  <header class="bar">
+    <button type="button" class="ghost" id="toc-toggle" aria-expanded="false" aria-controls="toc">
+      Entries
+    </button>
+    <p class="mark">THE SHADOW PHASE</p>
+    <button type="button" class="ghost" id="random-entry">
+      Enter from any point
+    </button>
   </header>
 
   <aside id="toc" class="toc" hidden>
-    <p class="toc-lead">&gt; ls ./entries</p>
-    <p class="toc-hint">The visible part of life is always later than its true beginning.</p>
+    <p class="toc-lead">The visible part of life is always later than its true beginning.</p>
     <nav id="toc-list"></nav>
   </aside>
 
   <main>
-    <section class="term-window book-window" aria-label="Book">
-      <div class="term-bar">
-        <div class="term-dots" aria-hidden="true">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-        </div>
-        <p class="term-title">the-shadow-phase.md — v1.1</p>
-        <p class="mark">THE SHADOW PHASE</p>
-      </div>
-      <article id="book" class="book term-body">
-        <p class="loading">&gt; loading field…</p>
-      </article>
-    </section>
+    <article id="book" class="book">
+      <p class="loading">The field is gathering…</p>
+    </article>
   </main>
 
   <footer class="colophon">
-    <p>&gt; cat ./colophon.md</p>
     <p>Tur Tyhyi · v1.1 · CC BY-NC-ND 4.0</p>
     <p>
-      <a href="https://turtyhyi.com/">turtyhyi.com</a>
+      <a href="https://github.com/tur-tyhyi/the-shadow-phase">Source</a>
       ·
-      <a href="https://github.com/tur-tyhyi/the-shadow-phase">source</a>
-      ·
-      <a href="THE-SHADOW-PHASE.md">plain text</a>
+      <a href="THE-SHADOW-PHASE.md">Plain text</a>
       ·
       <a href="mailto:spivbuttya@icloud.com">spivbuttya@icloud.com</a>
     </p>

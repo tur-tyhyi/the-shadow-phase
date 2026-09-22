@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#E2DBFC"/>
-  <rect x="8" y="8" width="48" height="48" rx="10" fill="#D9C2FE" stroke="#8785F7" stroke-width="2"/>
-  <circle cx="20" cy="20" r="3" fill="#FF5F57"/>
-  <circle cx="30" cy="20" r="3" fill="#FEBC2E"/>
-  <circle cx="40" cy="20" r="3" fill="#28C840"/>
-  <text x="32" y="44" text-anchor="middle" font-family="ui-monospace, monospace" font-size="14" font-weight="700" fill="#4C0FF5">SP</text>
+  <rect width="64" height="64" fill="#0c0b09"/>
+  <circle cx="32" cy="32" r="18" fill="none" stroke="#c4a574" stroke-width="1.2"/>
+  <circle cx="32" cy="32" r="8" fill="none" stroke="#c4a574" stroke-width="0.8" opacity="0.7"/>
+  <circle cx="32" cy="32" r="1.6" fill="#c4a574"/>
 </svg>
